@@ -1,14 +1,14 @@
 # Overstrike balance hotfix: every Overstrike game reads this file when it checks for updates.
 # How to write one: see README.md. Change @id whenever you publish, or players will not see it as new.
 
-@id = 0.9.0-base
+@id = 2026-11-12a
 @game = 0.9.0
-@notes = Built-in balance for version 0.9.0 (no changes).
+@notes = Wisp: magazine 36 -> 20, reload 0.5 s -> 1 s, needle damage 24.75 -> 18.
+@notes = Vesper: reload 1 s -> 0.95 s (every hero keeps a reload time of their own).
 @latest = 0.9.0
 @download = https://github.com/moderngentlemen-sudo/Overstrike-Releases/releases/latest
 
-# Value lines go here, one per line, for example:
-# wisp.ReloadSeconds = 0.5
-# wisp.Primary.OnStart.0.DirectDamage = 22
-# kestrel.Ability2.Timing.cooldown = 6
-# status.marked.Magnitude = 0.15
+wisp.Magazine = 20
+wisp.ReloadSeconds = 1
+wisp.Primary.OnStart.0.DirectDamage = 18
+vesper.ReloadSeconds = 0.95

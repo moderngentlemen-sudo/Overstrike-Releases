@@ -2,14 +2,22 @@
 # How to write one: see README.md. Change @id whenever you publish, or players will not see it as new.
 # Each hotfix replaces the last, so this lists every value still changed.
 
-@id = 2026-11-13a
+@id = 2026-11-13b
 @game = 0.9.0
-@notes = Wisp: reload 1 s -> 0.75 s, needle damage 18 -> 20 (magazine stays 20).
-@notes = Vesper: reload 0.95 s (unchanged from the last hotfix).
+@notes = Wisp's needlers retuned: 40 needles a second (20 from each pistol), 5.75 damage each (230 a second),
+@notes = headshots x2, a 40-round magazine (1 s of fire), 1 s reload, near-instant needles, 3.5 degree spread.
+@notes = Damage falloff over distance and spread that grows as you keep firing arrive with the next build.
+@notes = Vesper: reload 0.95 s (unchanged).
 @latest = 0.9.0
 @download = https://github.com/moderngentlemen-sudo/Overstrike-Releases/releases/latest
 
-wisp.Magazine = 20
-wisp.ReloadSeconds = 0.75
-wisp.Primary.OnStart.0.DirectDamage = 20
+wisp.Magazine = 40
+wisp.ReloadSeconds = 1
+wisp.Primary.Timing.interval = 0.025
+wisp.Primary.OnStart.0.DirectDamage = 5.75
+wisp.Primary.OnStart.0.CritMultiplier = 2
+wisp.Primary.OnStart.0.Radius = 0.04
+wisp.Primary.OnStart.0.Speed = 600
+wisp.Primary.OnStart.0.SpreadDegrees = 3.5
+wisp.Primary.OnStart.0.Recoil.Settle = 0.22
 vesper.ReloadSeconds = 0.95
